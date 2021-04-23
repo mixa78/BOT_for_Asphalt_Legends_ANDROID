@@ -45,9 +45,11 @@ var i = dialogs.select("Please select an option", options);
 if(i >= 0){
     if (options[i]=="WORLD SERIES"){
         Multi_PLAYER = 'World Series';//Классическая сетевая игра
+        toast('World Series')
     }
     if (options[i]=="LIMITED SERIES and WORLD SERIES"){
         Multi_PLAYER = 'Limited'; //Ограниченная сетевая игра и Классическая сетевая игра
+        toast('LIMITED SERIES and WORLD SERIES')
     }
 }else{
     toast("Вы ничего не выбрали! Катаем в верхней сетке");
