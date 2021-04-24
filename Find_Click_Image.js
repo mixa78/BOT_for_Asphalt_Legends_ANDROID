@@ -1,9 +1,7 @@
 //ПОИСК ИЗОБРАЖЕНИЯ НА ЭКРАНЕ
 
-auto();
+auto(); //Проверка, что включены все необходимые разрешения для auto.js
 requestScreenCapture(true); //Разрешение на получение снимков экрана
-
-var Find_Click_Image = {}; //Создаём список для хранения функций
 
 //Поиск и клик по изображению
 //Передаём: путь файла образца, время поиска, click
@@ -11,9 +9,11 @@ var Find_Click_Image = {}; //Создаём список для хранения
 //Если click = 'find', то будет только поиск изображения на экране
 //quality - точность поиска от 0 до 1
 
+var Find_Click_Image = {}; //Создаём список для хранения функций
+
 Find_Click_Image.Find_Click_Image = function(path, wait, clicker, quality) {
        
-    var result = false;
+    var result = false; //возвращает результат поиска изображения
     
     var sample = images.read(path); //Считываем образец изображения
     
@@ -43,7 +43,7 @@ Find_Click_Image.Find_Click_Image = function(path, wait, clicker, quality) {
             //Если надо кликнуть по кнопке
             if (clicker == 'clicker') {
                                 
-                result = click(p.x + (sample.getWidth()) / 2, p.y + sample.getHeight() / 2);
+                result = click(p.x + sample.getWidth() / 2, p.y + sample.getHeight() / 2);
                 sleep(2000); //пауза обязательно!
                     
                 //На всякий случай один раз проверяем, что кнопка исчезла
@@ -53,7 +53,7 @@ Find_Click_Image.Find_Click_Image = function(path, wait, clicker, quality) {
                 threshold: quality
                 });
                 if (p){
-                    click(p.x + (sample.getWidth()) / 2, p.y + sample.getHeight() / 2);    
+                    click(p.x + sample.getWidth() / 2, p.y + sample.getHeight() / 2);    
                 }
                 
                 
