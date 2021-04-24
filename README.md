@@ -1,2 +1,1 @@
-##### БОТ ДЛЯ ИГРЫ ASPHALT LEGENDS
-____
+# БОТ ДЛЯ ИГРЫ ASPHALT LEGENDS
