@@ -72,4 +72,10 @@ Find_Click_Image.Find_Click_Image = function(path, wait, clicker, quality) {
     return result;
 }
 
-Find_Click_Image.Find_Click_Image('sample.jpg',5,'clicker',1); 
+result = Find_Click_Image.Find_Click_Image('sample.jpg',5,'clicker',0.9); 
+
+if (result){
+    alert("Изображение найдено !");
+}else{
+    alert("Изображение не найдено !");
+}
