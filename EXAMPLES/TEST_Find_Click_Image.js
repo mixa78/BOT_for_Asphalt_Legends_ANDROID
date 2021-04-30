@@ -3,7 +3,6 @@
 //ПОИСК ИЗОБРАЖЕНИЯ НА ЭКРАНЕ
 
 auto(); //Проверка, что включены все необходимые разрешения для auto.js
-requestScreenCapture(true); //Разрешение на получение снимков экрана
 
 //Поиск и клик по изображению
 //Передаём: путь файла образца, время поиска, click
@@ -71,6 +70,31 @@ Find_Click_Image.Find_Click_Image = function(path, wait, clicker, quality) {
    
     return result;
 }
+
+
+
+
+
+
+var options = ["Вертикальный", "Горизонтальный"]
+var i = dialogs.select("Выберите ориентацию экрана", options);
+
+sleep(1000); //Пауза
+
+if(i >= 0){
+    if (options[i]=="Вертикальный"){
+        requestScreenCapture(true); //Разрешение на получение снимков вертикального экрана
+    }
+    if (options[i]=="Горизонтальный"){
+        requestScreenCapture(false); //Разрешение на получение снимков горизонтального экрана
+    }
+}else{
+    toast("Вы ничего не выбрали! Ориентация горизонтальная!");
+    requestScreenCapture(false); //Разрешение на получение снимков горизонтального экрана
+}
+
+
+
 
 result = Find_Click_Image.Find_Click_Image('sample.jpg',5,'clicker',0.9); 
 
