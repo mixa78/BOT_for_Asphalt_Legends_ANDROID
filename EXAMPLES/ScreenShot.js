@@ -15,7 +15,7 @@ if(i >= 0){
         images.save(captureScreen(),'screen.png', 'png', 100);
         alert('Был успешно сделан скриншот screen.png')
     }
-    if (options[i]=="LIMITED SERIES and WORLD SERIES"){
+    if (options[i]=="Горизонтальный"){
         requestScreenCapture(false); //Разрешение на получение снимков горизонтального экрана
 
         images.save(captureScreen(),'screen.png', 'png', 100);
